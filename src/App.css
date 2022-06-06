@@ -23,6 +23,15 @@
   
 }
 
+.loginPage {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
 a {
   cursor: pointer;
   text-decoration: none !important;
