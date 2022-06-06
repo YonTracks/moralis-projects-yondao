@@ -2,8 +2,8 @@
 
 # Login page
 
-<img src="./src/images/DaoScreenshot1.png">
+<img src="./src/images/DaoScreenshot.png">
 
 # YonDao
 
-<img src="./src/images/DaoScreenshot.png">
+<img src="./src/images/DaoScreenshot1.png">
