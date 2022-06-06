@@ -1,3 +1,4 @@
+  
   .voting{
     margin-top: 350px;
     background-color: white;
@@ -94,5 +95,9 @@
     height:8px;
     background-color:rgba(6, 158, 252, 0.5);
     border-radius: 4px;
+  }
+
+  .sc-bczRLJ {
+    margin-left: 55px;
   }
   

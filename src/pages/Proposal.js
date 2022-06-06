@@ -13,17 +13,17 @@ const Proposal = () => {
   const [latestVote, setLatestVote] = useState();
   const [percUp, setPercUp] = useState(0);
   const [percDown, setPercDown] = useState(0);
-  const [votes, setVotes] = useState([]);
+  const [proposalVotes, setProposalVotes] = useState([]);
   const [sub, setSub] = useState(false);
   const contractProcessor = useWeb3ExecuteFunction();
 
   useEffect(() => {
     if (isInitialized) {
       
-      async function getVotes() {
+      async function getProposalVotes() {
         
-        const Votes = Moralis.Object.extend("Votes");
-        const query = new Moralis.Query(Votes);
+        const ProposalVotes = Moralis.Object.extend("ProposalVotes");
+        const query = new Moralis.Query(ProposalVotes);
         query.equalTo("proposal", proposalDetails.id);
         query.descending("createdAt");
         const results = await query.find();
@@ -57,10 +57,10 @@ const Proposal = () => {
           />,
         ]);
 
-        setVotes(votesDirection);
+        setProposalVotes(votesDirection);
 
       }
-      getVotes();
+      getProposalVotes();
 
     }
   }, [isInitialized]);
@@ -115,6 +115,7 @@ const Proposal = () => {
 
   return (
     <>
+    <div className="main-window">
       <div className="contentProposal">
         <div className="proposal">
           <Link to="/">
@@ -162,10 +163,11 @@ const Proposal = () => {
         )}
         <div className="votesDiv">
           <Table
-            style={{ width: "60%" }}
-            columnsConfig="90% 10%"
-            data={votes}
-            header={[<span>Address</span>, <span>Vote</span>]}
+            style={{ width: "70%" }}
+            columnsConfig="66% 30%"
+            data={proposalVotes}
+            header={[<span style={{ marginLeft:"20px"}}>Address</span>,
+            <span style={{ marginLeft:"50px"}}>Vote</span>]}
             pageSize={5}
           />
 
@@ -205,7 +207,7 @@ const Proposal = () => {
           />
         </div>
       </div>
-      <div className="voting"></div>
+      </div>
     </>
   );
 };

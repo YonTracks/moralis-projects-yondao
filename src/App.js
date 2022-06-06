@@ -8,7 +8,7 @@ import { ConnectButton } from "web3uikit";
 
 const App = () => {
   return (
-    <>
+    <div className="main-window">
       <div className="header">
         <img width="160px" src={moralisLogo} alt="logo" />
         <ConnectButton />
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/proposal" element={<Proposal />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

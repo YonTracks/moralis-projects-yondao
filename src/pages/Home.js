@@ -152,6 +152,7 @@ const Home = () => {
 
   return (
     <>
+    <div className="main-window">
       <div className="content">
         <TabList defaultActiveKey={1} tabStyle="bulbUnion">
           <Tab tabKey={1} tabName="DAO">
@@ -178,14 +179,14 @@ const Home = () => {
                 <Widget info={totalP-counted} title="Ongoing Proposals" />
               </div>
               Recent Proposals
-              <div style={{ marginTop: "30px" }}>
+              <div style={{ marginTop: "30px", border: "none"}}>
                 <Table
-                  columnsConfig="10% 70% 20%"
+                  columnsConfig="10% 70% 15%"
                   data={proposals}
                   header={[
-                    <span>ID</span>,
+                    <span style={{ marginLeft: "15px" }}>ID</span>,
                     <span>Description</span>,
-                    <span>Status</span>,
+                    <span style={{ marginLeft: "20px" }}>Status</span>,
                   ]}
                   pageSize={5}
                 />
@@ -220,11 +221,14 @@ const Home = () => {
             </div>
             )}
           </Tab>
-          <Tab tabKey={2} tabName="Forum"></Tab>
+          <Tab tabKey={2} tabName="Forum">
+            <div className="tab-content">
+            </div>
+          </Tab>
           <Tab tabKey={3} tabName="Docs"></Tab>
         </TabList>
       </div>
-      <div className="voting"></div>
+      </div>
     </>
   );
 };
