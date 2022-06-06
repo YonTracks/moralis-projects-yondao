@@ -1,6 +1,5 @@
 node_modules
 .env
-smartcontracts
 coverage
 coverage.json
 typechain
