@@ -104,6 +104,7 @@ const Proposal = () => {
       onSuccess: () => {
         console.log("Vote Cast Succesfully");
         setSub(false);
+        
       },
       onError: (error) => {
         alert(error.data.message);

@@ -4,6 +4,8 @@ import "./pages.css";
 import { TabList, Tab, Widget, Tag, Table, Form } from "web3uikit";
 import { Link } from "react-router-dom";
 import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
+import Forum from "./Forum";
+import Games from "./Games";
 
 const Home = () => {
   const [passRate, setPassRate] = useState(0);
@@ -53,11 +55,14 @@ const Home = () => {
       onSuccess: () => {
         console.log("Proposal Succesful");
         setSub(false);
+        
       },
       onError: (error) => {
         alert(error.data.message);
         setSub(false);
+        
       },
+      
     });
 
 
@@ -109,6 +114,7 @@ const Home = () => {
         );
         setProposals(table);
         setTotalP(results.length);
+        console.log(results)
       }
 
 
@@ -152,7 +158,6 @@ const Home = () => {
 
   return (
     <>
-    <div className="main-window">
       <div className="content">
         <TabList defaultActiveKey={1} tabStyle="bulbUnion">
           <Tab tabKey={1} tabName="DAO">
@@ -223,11 +228,13 @@ const Home = () => {
           </Tab>
           <Tab tabKey={2} tabName="Forum">
             <div className="tab-content">
+              <Forum />
             </div>
           </Tab>
-          <Tab tabKey={3} tabName="Docs"></Tab>
+          <Tab tabKey={3} tabName="Games">
+            <Games />
+          </Tab>
         </TabList>
-      </div>
       </div>
     </>
   );
