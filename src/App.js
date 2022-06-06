@@ -11,7 +11,7 @@ const App = () => {
     <div className="main-window">
       <div className="header">
         <img width="160px" src={moralisLogo} alt="logo" />
-        <ConnectButton />
+        <ConnectButton className="connectButton"/>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
